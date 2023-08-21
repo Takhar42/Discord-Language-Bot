@@ -10,7 +10,6 @@ intents.message_content = True
 intent = discord.Intent = True
 
 client = discord.Client(intents=intents)
-token = config.params['TOKEN']
 translator = Translator()
 
 languages = [Language.AFRIKAANS, Language.ALBANIAN, Language.ARABIC, Language.ARMENIAN, Language.AZERBAIJANI, Language.BASQUE, Language.BELARUSIAN, Language.BENGALI, Language.NYNORSK, Language.BOSNIAN, Language.BULGARIAN, Language.CATALAN, Language.CHINESE, Language.CROATIAN, Language.CZECH, Language.DANISH, Language.DUTCH, Language.ENGLISH, Language.ESTONIAN, Language.ESPERANTO, Language.FINNISH, Language.FRENCH, Language.GANDA, Language.GEORGIAN, Language.GERMAN, Language.GREEK, Language.GUJARATI, Language.HEBREW, Language.HINDI, Language.HUNGARIAN, Language.ICELANDIC, Language.INDONESIAN, Language.IRISH, Language.ITALIAN, Language.JAPANESE, Language.KAZAKH, Language.KOREAN, Language.LATIN, Language.LATVIAN, Language.LITHUANIAN, Language.MACEDONIAN, Language.MALAY, Language.MAORI, Language.MARATHI, Language.MONGOLIAN, Language.PERSIAN, Language.POLISH, Language.PORTUGUESE, Language.PUNJABI, Language.ROMANIAN, Language.RUSSIAN, Language.SERBIAN, Language.SHONA, Language.SLOVAK, Language.SLOVENE, Language.SOMALI, Language.SOTHO, Language.SPANISH, Language.SWAHILI, Language.SWEDISH, Language.TAGALOG, Language.TAMIL, Language.TELUGU, Language.THAI, Language.TSONGA, Language.TSWANA, Language.TURKISH, Language.UKRAINIAN, Language.URDU, Language.VIETNAMESE, Language.WELSH, Language.XHOSA, Language.YORUBA, Language.ZULU]
@@ -48,5 +47,7 @@ async def on_message(message):
     user_lang = detector.detect_language_of(user_message)
     print(user_lang)
 
-TOKEN = 'MTE0MjE3MjI3Mzk4MjMxMjU4MQ.GWV_0S.5j1AtvdxKenN8DlR77r4v-kVB3-aUi8qDPkr0w'
+TOKEN = input("Enter bot token here: ")
+config.params = TOKEN
+
 client.run(TOKEN)
