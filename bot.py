@@ -48,6 +48,8 @@ async def on_message(message):
     print(user_lang)
 
 TOKEN = input("Enter bot token here: ")
+
 config.params = TOKEN
+
 
 client.run(TOKEN)
